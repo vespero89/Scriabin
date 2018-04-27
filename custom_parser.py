@@ -16,17 +16,18 @@ parser.add_argument(
     '-d', '--device', type=int_or_str,
     help='input device (numeric ID or substring)', default=4)
 parser.add_argument(
-    '-w', '--window', type=float, default=200, metavar='DURATION',
-    help='visible time slot (default: %(default)s ms)')
+    '-w', '--window', type=float, default=2, metavar='DURATION',
+    help='visible time slot (default: %(default)s s)')
 parser.add_argument(
     '-i', '--interval', type=float, default=30,
     help='minimum time between plot updates (default: %(default)s ms)')
 parser.add_argument(
-    '-b', '--blocksize', type=int, help='block size (in samples)')
+    '-b', '--blocksize', type=int, default=1,
+    help='block size (in seconds')
 parser.add_argument(
     '-r', '--samplerate', type=float, help='sampling rate of audio device')
 parser.add_argument(
-    '-n', '--downsample', type=int, default=1, metavar='N',
+    '-n', '--downsample', type=int, default=4, metavar='N',
     help='display every Nth sample (default: %(default)s)')
 parser.add_argument(
     'channels', type=int, default=[1], nargs='*', metavar='CHANNEL',
